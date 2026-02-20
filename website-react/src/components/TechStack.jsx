@@ -51,6 +51,39 @@ function Blueprint() {
     )
 }
 
+function Particles() {
+    return (
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
+            {[...Array(30)].map((_, i) => (
+                <motion.div
+                    key={i}
+                    initial={{
+                        opacity: Math.random() * 0.3,
+                        x: Math.random() * 100 + '%',
+                        y: Math.random() * 100 + '%'
+                    }}
+                    animate={{
+                        y: ['-5%', '5%', '-5%'],
+                        opacity: [0.1, 0.3, 0.1]
+                    }}
+                    transition={{
+                        duration: 5 + Math.random() * 5,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    style={{
+                        position: 'absolute',
+                        width: '2px', height: '2px',
+                        background: 'var(--blue)',
+                        borderRadius: '50%',
+                        filter: 'blur(1px)'
+                    }}
+                />
+            ))}
+        </div>
+    )
+}
+
 export default function TechStack() {
     return (
         <section id="tech" className="grid-bg" style={{
