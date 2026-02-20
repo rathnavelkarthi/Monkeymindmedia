@@ -21,15 +21,15 @@
   /* Clinical, near invisible */
   --border-active: rgba(255, 255, 255, 0.08);
 
-  --section-pad: 8rem;
+  --section-pad: 5rem;
 
-  /* Massive enterprise whitespace */
+  /* Responsive section spacing */
   @media (max-width: 1024px) {
-    --section-pad: 8rem;
+    --section-pad: 4rem;
   }
 
   @media (max-width: 768px) {
-    --section-pad: 5rem;
+    --section-pad: 3rem;
   }
 
   --radius-card: 1.5rem;
@@ -312,7 +312,7 @@ body {
 /* ── Responsive ──────────────────────────────── */
 @media (max-width: 768px) {
   section {
-    padding: 5rem 0;
+    padding: 3rem 0;
   }
 
   body {
