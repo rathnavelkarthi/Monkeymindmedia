@@ -115,15 +115,15 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'hello@monkeymindmedia.com';
-    $mail->Password   = 'YOUR_EMAIL_PASSWORD'; // USER MUST CONFIGURE
+    $mail->Username   = 'contact@monkeymindmedia.com';
+    $mail->Password   = 'Desmond@rathnavel1997'; 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
-    $mail->setFrom('hello@monkeymindmedia.com', 'Monkey Mind Media - Intelligence Portal');
-    $mail->addAddress('hello@monkeymindmedia.com');
+    $mail->setFrom('contact@monkeymindmedia.com', 'Monkey Mind Media - Project Portal');
+    $mail->addAddress('contact@monkeymindmedia.com');
 
-    $mail->Subject = 'New Strategic Briefing Intake - ' . $organization;
+    $mail->Subject = 'New Strategic Project Inquiry - ' . $organization;
 
     $mail->Body = "
 --------------------------------------------------
