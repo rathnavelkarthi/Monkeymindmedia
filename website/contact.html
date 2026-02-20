@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact Monkey Mind Media — tell us about your project and let's create something extraordinary together." />
+    <title>Contact — Monkey Mind Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Page-specific additions */
+        .contact-info__social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: var(--space-md);
+        }
+
+        .contact-info__social-link {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius);
+            border: 1px solid var(--clr-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: border-color var(--transition), background var(--transition), transform var(--transition);
+        }
+
+        .contact-info__social-link:hover {
+            border-color: rgba(124, 58, 237, 0.5);
+            background: rgba(124, 58, 237, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-faq {
+            padding: var(--space-2xl) 0;
+            background: var(--clr-surface);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: var(--space-xl);
+        }
+
+        .faq-item {
+            padding: var(--space-md) var(--space-lg);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-lg);
+            background: var(--clr-card);
+            transition: border-color var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .faq-item h4 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: var(--fs-sm);
+            color: var(--clr-fg-sec);
+            line-height: 1.7;
+        }
+
+        .budget-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .budget-option {
+            padding: 0.75rem;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius);
+            background: var(--clr-surface);
+            font-size: var(--fs-sm);
+            font-family: var(--font-body);
+            color: var(--clr-fg-sec);
+            cursor: pointer;
+            transition: border-color var(--transition), background var(--transition), color var(--transition);
+            text-align: center;
+        }
+
+        .budget-option:hover,
+        .budget-option.selected {
+            border-color: var(--clr-primary);
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--clr-fg);
+        }
+
+        .budget-option.selected {
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .budget-options {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cursor Glow -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- ══ Navigation ══════════════════════════════════════ -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav__inner">
+                <a href="index.html" class="nav__logo" aria-label="Monkey Mind Media home">
+                    Monkey<span>.</span>Mind
+                </a>
+                <ul class="nav__links" id="nav-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html#testimonials">Clients</a></li>
+                    <li><a href="contact.html" class="nav__cta" aria-current="page">Contact</a></li>
+                </ul>
+                <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══ Contact Hero ══════════════════════════════════════ -->
+    <section class="contact-hero" aria-labelledby="contact-hero-title">
+        <div class="contact-hero__bg"></div>
+        <div class="contact-hero__orb" aria-hidden="true"></div>
+        <div class="container">
+            <div class="section-label reveal" style="justify-content:center; margin-bottom:1rem;">Get in Touch</div>
+            <h1 class="contact-hero__title reveal reveal-delay-1" id="contact-hero-title">
+                Let's Build<br />
+                <span class="gradient-text">Something Extraordinary.</span>
+            </h1>
+            <p class="contact-hero__sub reveal reveal-delay-2">
+                Tell us about your project. We'll respond within 24 hours with ideas, questions, and a clear path
+                forward.
+            </p>
+        </div>
+    </section>
+
+    <!-- ══ Contact Section ══════════════════════════════════ -->
+    <section class="contact-section" aria-label="Contact form and information">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Left: Info -->
+                <aside>
+                    <div class="reveal">
+                        <h2 class="contact-info__title">Start the Conversation</h2>
+                        <div class="contact-info__items">
+
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon" aria-hidden="true">📧</div>
+                                <div>
+                                    <div class="contact-info__item-label">Email Us</div>
+                                    <a href="mailto:hello@monkeymindmedia.com" class="contact-info__item-value"
+                                        style="color:var(--clr-primary-lt);">hello@monkeymindmedia.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon" aria-hidden="true">📞</div>
+                                <div>
+                                    <div class="contact-info__item-label">Call Us</div>
+                                    <a href="tel:+1234567890" class="contact-info__item-value">+1 (234) 567-890</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon" aria-hidden="true">📍</div>
+                                <div>
+                                    <div class="contact-info__item-label">Studio</div>
+                                    <div class="contact-info__item-value">Available Worldwide</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon" aria-hidden="true">⏰</div>
+                                <div>
+                                    <div class="contact-info__item-label">Response Time</div>
+                                    <div class="contact-info__item-value">Within 24 hours</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p style="font-size:var(--fs-sm);color:var(--clr-fg-muted);margin-bottom:var(--space-sm);">
+                            Follow our work</p>
+                        <div class="contact-info__social" aria-label="Social media links">
+                            <a href="#" class="contact-info__social-link" aria-label="Instagram">📸</a>
+                            <a href="#" class="contact-info__social-link" aria-label="YouTube">▶️</a>
+                            <a href="#" class="contact-info__social-link" aria-label="LinkedIn">💼</a>
+                            <a href="#" class="contact-info__social-link" aria-label="TikTok">🎵</a>
+                        </div>
+                    </div>
+
+                    <!-- Process Steps -->
+                    <div style="margin-top:var(--space-xl);" class="reveal reveal-delay-1">
+                        <p class="section-label" style="margin-bottom:var(--space-md);">Our Process</p>
+                        <div style="display:flex;flex-direction:column;gap:1rem;">
+                            <div style="display:flex;gap:1rem;align-items:flex-start;">
+                                <div
+                                    style="width:32px;height:32px;border-radius:50%;background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--clr-primary-lt);flex-shrink:0;">
+                                    01</div>
+                                <div>
+                                    <div style="font-weight:600;font-size:var(--fs-sm);margin-bottom:0.2rem;">Discovery
+                                        Call</div>
+                                    <div style="font-size:var(--fs-sm);color:var(--clr-fg-sec);">We learn your goals,
+                                        audience, and vision.</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:1rem;align-items:flex-start;">
+                                <div
+                                    style="width:32px;height:32px;border-radius:50%;background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--clr-primary-lt);flex-shrink:0;">
+                                    02</div>
+                                <div>
+                                    <div style="font-weight:600;font-size:var(--fs-sm);margin-bottom:0.2rem;">Creative
+                                        Proposal</div>
+                                    <div style="font-size:var(--fs-sm);color:var(--clr-fg-sec);">A tailored plan,
+                                        timeline, and investment breakdown.</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:1rem;align-items:flex-start;">
+                                <div
+                                    style="width:32px;height:32px;border-radius:50%;background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--clr-primary-lt);flex-shrink:0;">
+                                    03</div>
+                                <div>
+                                    <div style="font-weight:600;font-size:var(--fs-sm);margin-bottom:0.2rem;">Create &
+                                        Deliver</div>
+                                    <div style="font-size:var(--fs-sm);color:var(--clr-fg-sec);">We bring your vision to
+                                        life, on time and on brief.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Right: Form -->
+                <main>
+                    <div class="contact-form reveal reveal-delay-1">
+                        <div class="form__fields" id="form-fields">
+                            <h2
+                                style="font-family:var(--font-head);font-weight:700;font-size:var(--fs-h3);margin-bottom:var(--space-lg);">
+                                Tell Us About Your Project</h2>
+
+                            <form id="contact-form" novalidate>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name <span
+                                                style="color:var(--clr-primary)">*</span></label>
+                                        <input type="text" id="first-name" name="first-name" placeholder="Sarah"
+                                            required autocomplete="given-name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name <span
+                                                style="color:var(--clr-primary)">*</span></label>
+                                        <input type="text" id="last-name" name="last-name" placeholder="Chen" required
+                                            autocomplete="family-name" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address <span
+                                            style="color:var(--clr-primary)">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="sarah@company.com" required
+                                        autocomplete="email" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="company">Company / Brand Name</label>
+                                    <input type="text" id="company" name="company" placeholder="Your Company"
+                                        autocomplete="organization" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="project-type">Project Type <span
+                                            style="color:var(--clr-primary)">*</span></label>
+                                    <select id="project-type" name="project-type" required>
+                                        <option value="" disabled selected>Select a service…</option>
+                                        <option value="video">Video Production</option>
+                                        <option value="photography">Photography</option>
+                                        <option value="brand-identity">Brand Identity</option>
+                                        <option value="social-content">Social Content</option>
+                                        <option value="full-service">Full-Service Retainer</option>
+                                        <option value="other">Something Else</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Estimated Budget</label>
+                                    <div class="budget-options" id="budget-options" role="group"
+                                        aria-label="Budget range">
+                                        <button type="button" class="budget-option" data-value="under-5k">Under
+                                            $5K</button>
+                                        <button type="button" class="budget-option" data-value="5k-15k">$5K –
+                                            $15K</button>
+                                        <button type="button" class="budget-option" data-value="15k-50k">$15K –
+                                            $50K</button>
+                                        <button type="button" class="budget-option" data-value="50k-plus">$50K+</button>
+                                        <button type="button" class="budget-option" data-value="not-sure">Not Sure
+                                            Yet</button>
+                                        <button type="button" class="budget-option" data-value="discuss">Let's
+                                            Discuss</button>
+                                    </div>
+                                    <input type="hidden" id="budget" name="budget" value="" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="timeline">Project Timeline</label>
+                                    <select id="timeline" name="timeline">
+                                        <option value="" disabled selected>When do you need this?</option>
+                                        <option value="asap">ASAP (within 2 weeks)</option>
+                                        <option value="1-month">Within 1 month</option>
+                                        <option value="3-months">1 – 3 months</option>
+                                        <option value="flexible">Flexible</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Tell Us More <span
+                                            style="color:var(--clr-primary)">*</span></label>
+                                    <textarea id="message" name="message"
+                                        placeholder="Describe your project, goals, inspiration, or anything else that would help us understand what you're building…"
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary form__submit" id="submit-btn">
+                                    Send My Brief
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+
+                            </form>
+                        </div>
+
+                        <!-- Success State -->
+                        <div class="form__success" id="form-success" role="alert" aria-live="polite">
+                            <div class="form__success-icon">🎉</div>
+                            <h3>Brief Received.</h3>
+                            <p style="color:var(--clr-fg-sec);margin-top:0.5rem;">We've got your message and we'll be in
+                                touch within 24 hours. Get ready to create something extraordinary.</p>
+                            <a href="index.html" class="btn btn--outline"
+                                style="margin-top:var(--space-lg);display:inline-flex;">Back to Home</a>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FAQ ══════════════════════════════════════════════ -->
+    <section class="contact-faq" aria-labelledby="faq-title">
+        <div class="container">
+            <div class="section__header">
+                <div class="section-label reveal">Common Questions</div>
+                <h2 class="section__title reveal reveal-delay-1" id="faq-title">Before You Send</h2>
+            </div>
+
+            <div class="faq-grid">
+                <article class="faq-item reveal">
+                    <h4>How long does a typical project take?</h4>
+                    <p>It depends on scope. A social content package can be ready in 2 weeks. A full brand identity or
+                        film production typically runs 4–12 weeks. We'll give you a clear timeline in your proposal.</p>
+                </article>
+                <article class="faq-item reveal reveal-delay-1">
+                    <h4>Do you work with clients outside your city?</h4>
+                    <p>Yes — we work with clients worldwide. Most of our workflow is remote-friendly, and we're
+                        experienced traveling for shoots when needed.</p>
+                </article>
+                <article class="faq-item reveal reveal-delay-2">
+                    <h4>What's included in the discovery call?</h4>
+                    <p>A 30-minute conversation to understand your goals, audience, and vision. No pitch deck, no
+                        pressure — just strategy talk to see if we're the right fit.</p>
+                </article>
+                <article class="faq-item reveal reveal-delay-3">
+                    <h4>Do you offer ongoing retainer packages?</h4>
+                    <p>We do. Many of our clients work with us on a monthly retainer for consistent content. Ask about
+                        our retainer tiers when you submit your brief.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ Footer ═══════════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a href="index.html" class="nav__logo" aria-label="Monkey Mind Media">Monkey<span>.</span>Mind</a>
+                    <p class="footer__brand-desc">A creative media studio obsessing over stories, visuals, and brands
+                        that move people forward.</p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">📸</a>
+                        <a href="#" class="footer__social-link" aria-label="YouTube">▶️</a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="footer__social-link" aria-label="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__col-title">Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html#services">Video Production</a></li>
+                        <li><a href="index.html#services">Photography</a></li>
+                        <li><a href="index.html#services">Brand Identity</a></li>
+                        <li><a href="index.html#services">Social Content</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__col-title">Company</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#work">Our Work</a></li>
+                        <li><a href="index.html#testimonials">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__col-title">Contact</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:hello@monkeymindmedia.com">hello@monkeymindmedia.com</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li><a href="contact.html">Start a Project</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>© 2026 Monkey Mind Media. All rights reserved.</span>
+                <span>Made with obsession.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Budget option toggle (contact page specific)
+        const budgetOptions = document.querySelectorAll('.budget-option');
+        const budgetInput = document.getElementById('budget');
+        budgetOptions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                budgetOptions.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                if (budgetInput) budgetInput.value = btn.dataset.value;
+            });
+        });
+    </script>
+</body>
+
+</html>
