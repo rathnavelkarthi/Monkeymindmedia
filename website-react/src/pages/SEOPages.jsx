@@ -7,9 +7,9 @@ export const AIVideoProduction = () => (
         intro="We engineer high-fidelity cinematic video systems using Veo3 and Sora 2, automating the creative lifecycle for global brand dominance."
         sections={[
             {
-                heading: 'Cinematic AI Infrastructure',
-                body: 'Our AI video production company specializes in building creative intelligence pipelines. By leveraging state-of-the-art generative models, we produce cinematic-grade brand films with zero traditional studio overhead. We don\'t just make videos; we architect visual authority. Most agencies focus on the output; we focus on the generative engine, ensuring consistency across every frame of your brand narrative.',
-                icon: '🎥'
+                heading: 'Enterprise AI Automation vs Traditional Solutions',
+                body: 'Most traditional production studios rely on labor-intensive human lifecycles that introduce friction, delay, and inconsistency. Our AI video production systems replace these bottlenecks with clinical automation engines. By treating creative as an engineering problem, we deliver cinematic-grade brand assets with absolute technical precision and predictable scalability.',
+                icon: '🎬'
             },
             {
                 heading: 'Veo3 & Sora 2 Integration',
@@ -50,9 +50,9 @@ export const PoliticalIntelligence = () => (
         intro="We architect Booth-level analytics, voter CRM systems, and constituency intelligence platforms for strategic political leadership."
         sections={[
             {
-                heading: 'Constituency Data Analytics',
-                body: 'Our political campaign technology suite provides deep-node analytics into voter sentiment and demographic shifts. We build the intelligence layer that allows political leaders to make data-driven decisions with surgical precision. By mapping thousands of data points across constituencies, we identify the exact signals required for narrative victory.',
-                icon: '📊'
+                heading: 'Political Campaign Intelligence Platforms — Mechanisms & Outcomes',
+                body: 'Modern political victory is no longer about gut feeling; it is about architectural control of data. Our systems provide booth-level visibility into voter sentiment shifts and mobilization metrics. By mapping thousands of intelligence nodes across a constituency, we enable leaders to deploy narrative updates with surgical precision, ensuring winning outcomes through data dominance.',
+                icon: '🏛️'
             },
             {
                 heading: 'AI-Powered Voter CRM',
@@ -169,8 +169,8 @@ export const PerformanceMarketing = () => (
         intro="Deploy mathematical performance engines optimized for ROAS and systemic acquisition across every digital platform."
         sections={[
             {
-                heading: 'Mathematical Acquisition',
-                body: 'Our performance marketing systems use AI-powered data signals to optimize ad spend in real-time. We focus on ROAS as the primary metric, building the infrastructure that connects creative outputs with conversion signals. This is mathematical marketing, where every dollar spent is tracked across the entire lifecycle of the user.',
+                heading: 'Why AI Systems Infrastructure Outperforms Traditional Marketing',
+                body: 'Traditional digital marketing focuses on siloed campaigns and surface-level engagement. We engineer performance marketing infrastructure that integrates data signals across the entire acquisition lifecycle. By replacing manual optimization with AI-powered mathematical engines, we achieve ROAS and scale that generic agencies cannot match. This is systems-driven growth for elite enterprises.',
                 icon: '📈'
             },
             {

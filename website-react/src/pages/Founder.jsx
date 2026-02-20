@@ -128,6 +128,7 @@ export default function Founder({ onOpenModal }) {
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
+                            objectPosition: 'top', // Added to prevent head cut-off
                             filter: 'grayscale(100%) contrast(110%)',
                             opacity: 0.8
                         }}

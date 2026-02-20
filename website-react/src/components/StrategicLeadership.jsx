@@ -25,6 +25,7 @@ function LeadershipCard({ name, title, description, image, link, linkText }) {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
+                        objectPosition: 'center 20%', // Added to prevent heads from being cut
                         filter: 'grayscale(100%) contrast(110%)',
                         opacity: 0.9
                     }}

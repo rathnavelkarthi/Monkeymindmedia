@@ -58,7 +58,7 @@ function Router({ onOpenModal }) {
   }, [])
 
   // Landing Page Routing
-  if (path === '/ai-video-production') return <AIVideoProduction />
+  if (path === '/ai-video-production-systems') return <AIVideoProduction />
   if (path === '/political-intelligence-platform') return <PoliticalIntelligence />
   if (path === '/whatsapp-ai-automation') return <WhatsAppAutomation />
   if (path === '/ai-saas-development') return <AISaaSDeployment />
