@@ -14,6 +14,29 @@ import {
 } from './pages/SEOPages'
 import ChennaiMarketing from './pages/ChennaiMarketing'
 
+// Local SEO — Core Cluster
+import DigitalMarketingAgency from './pages/local-seo/DigitalMarketingAgency'
+import BestDigitalMarketingAgency from './pages/local-seo/BestDigitalMarketingAgency'
+import DigitalMarketingCompany from './pages/local-seo/DigitalMarketingCompany'
+
+// Local SEO — SEO Cluster
+import SEOServices from './pages/local-seo/SEOServices'
+import SEOCompany from './pages/local-seo/SEOCompany'
+import LocalSEO from './pages/local-seo/LocalSEO'
+import AISEOServices from './pages/local-seo/AISEOServices'
+
+// Local SEO — Paid & Social Cluster
+import SocialMediaMarketing from './pages/local-seo/SocialMediaMarketing'
+import PPCManagement from './pages/local-seo/PPCManagement'
+import ContentMarketing from './pages/local-seo/ContentMarketing'
+
+// Local SEO — Blog Cluster
+import HowToChooseAgency from './pages/local-seo/blog/HowToChooseAgency'
+import TopCompaniesNearMe from './pages/local-seo/blog/TopCompaniesNearMe'
+import AffordableServices from './pages/local-seo/blog/AffordableServices'
+import PerformanceMarketingAgency from './pages/local-seo/blog/PerformanceMarketingAgency'
+import BestSocialMediaServices from './pages/local-seo/blog/BestSocialMediaServices'
+
 function UseCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
   const [isMobile, setIsMobile] = useState(false)
@@ -65,6 +88,29 @@ function Router({ onOpenModal }) {
   if (path === '/ai-saas-development') return <AISaaSDeployment />
   if (path === '/performance-marketing-systems') return <PerformanceMarketing />
   if (path === '/best-marketing-agency-chennai') return <ChennaiMarketing onOpenModal={onOpenModal} />
+
+  // Local SEO — Core Cluster
+  if (path === '/digital-marketing-agency-chennai') return <DigitalMarketingAgency onOpenModal={onOpenModal} />
+  if (path === '/best-digital-marketing-agency-chennai') return <BestDigitalMarketingAgency onOpenModal={onOpenModal} />
+  if (path === '/digital-marketing-company-chennai') return <DigitalMarketingCompany onOpenModal={onOpenModal} />
+
+  // Local SEO — SEO Cluster
+  if (path === '/seo-services-chennai') return <SEOServices onOpenModal={onOpenModal} />
+  if (path === '/seo-company-chennai') return <SEOCompany onOpenModal={onOpenModal} />
+  if (path === '/local-seo-chennai') return <LocalSEO onOpenModal={onOpenModal} />
+  if (path === '/ai-seo-services-chennai') return <AISEOServices onOpenModal={onOpenModal} />
+
+  // Local SEO — Paid & Social Cluster
+  if (path === '/social-media-marketing-chennai') return <SocialMediaMarketing onOpenModal={onOpenModal} />
+  if (path === '/ppc-management-chennai') return <PPCManagement onOpenModal={onOpenModal} />
+  if (path === '/content-marketing-agency-chennai') return <ContentMarketing onOpenModal={onOpenModal} />
+
+  // Local SEO — Blog Cluster
+  if (path === '/how-to-choose-digital-marketing-agency-chennai') return <HowToChooseAgency onOpenModal={onOpenModal} />
+  if (path === '/top-digital-marketing-companies-near-me-chennai') return <TopCompaniesNearMe onOpenModal={onOpenModal} />
+  if (path === '/affordable-digital-marketing-services-chennai') return <AffordableServices onOpenModal={onOpenModal} />
+  if (path === '/performance-marketing-agency-chennai') return <PerformanceMarketingAgency onOpenModal={onOpenModal} />
+  if (path === '/best-social-media-marketing-services-chennai') return <BestSocialMediaServices onOpenModal={onOpenModal} />
   if (path === '/chief-marketing-head' || path === '/vetrivel') return <ChiefMarketingHead onOpenModal={onOpenModal} />
   if (path === '/founder' || path === '/rathnavel') return <Founder onOpenModal={onOpenModal} />
 

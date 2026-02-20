@@ -96,8 +96,9 @@ export default function ChennaiMarketing({ onOpenModal }) {
 
             {/* ═══════════ HERO ═══════════ */}
             <header style={{
-                minHeight: '85vh', display: 'flex', alignItems: 'center',
+                minHeight: 'min(85vh, 750px)', display: 'flex', alignItems: 'center',
                 paddingTop: 'clamp(6rem, 10vw, 10rem)',
+                paddingBottom: 'clamp(3rem, 6vw, 5rem)',
                 position: 'relative', overflow: 'hidden'
             }}>
                 {/* Ambient glow */}
@@ -112,9 +113,9 @@ export default function ChennaiMarketing({ onOpenModal }) {
                     <FadeInText>
                         <SectionLabel>CHENNAI'S PREMIER DIGITAL PARTNER</SectionLabel>
                         <h1 className="text-h1" style={{
-                            fontSize: 'clamp(2.5rem, 8vw, 5.5rem)',
-                            lineHeight: 0.9,
-                            marginBottom: 'clamp(2rem, 5vw, 3rem)',
+                            fontSize: 'clamp(2rem, 8vw, 5.5rem)',
+                            lineHeight: 1.0,
+                            marginBottom: 'clamp(1.5rem, 5vw, 3rem)',
                             maxWidth: '900px'
                         }}>
                             Best Marketing Agency in Chennai<span style={{ color: 'var(--blue)' }}>.</span>
@@ -139,7 +140,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                             We've helped brands across Anna Nagar, T Nagar, OMR, Velachery, and Adyar
                             scale their digital performance with systems-first marketing infrastructure.
                         </p>
-                        <button onClick={onOpenModal} className="btn btn-primary" style={{ padding: '1.25rem 3rem' }}>
+                        <button onClick={onOpenModal} className="btn btn-primary" style={{ padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem)', fontSize: 'clamp(0.8125rem, 2vw, 0.9375rem)' }}>
                             GET A FREE STRATEGY SESSION
                         </button>
                     </FadeInText>
@@ -184,7 +185,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                 <FadeInSection>
                     <div style={{ padding: 'var(--section-pad) 0', borderTop: '1px solid var(--border)' }}>
                         <SectionLabel>CAPABILITIES</SectionLabel>
-                        <h2 className="text-h2" style={{ marginBottom: '4rem' }}>Our Digital Marketing Services in Chennai</h2>
+                        <h2 className="text-h2" style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)', fontSize: 'clamp(1.5rem, 5vw, 3rem)' }}>Our Digital Marketing Services in Chennai</h2>
                         <div style={{
                             display: 'grid',
                             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))',
@@ -224,7 +225,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                 <FadeInSection>
                     <div style={{ padding: 'var(--section-pad) 0' }}>
                         <SectionLabel>VERTICALS</SectionLabel>
-                        <h2 className="text-h2" style={{ marginBottom: '4rem' }}>Industries We Serve in Chennai</h2>
+                        <h2 className="text-h2" style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)', fontSize: 'clamp(1.5rem, 5vw, 3rem)' }}>Industries We Serve in Chennai</h2>
                         <div style={{
                             display: 'grid',
                             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
@@ -236,7 +237,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                                     whileHover={{ y: -8, borderColor: 'var(--blue)' }}
                                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                                     style={{
-                                        padding: '2.5rem',
+                                        padding: 'clamp(1.5rem, 4vw, 2.5rem)',
                                         background: 'var(--card)',
                                         border: '1px solid var(--border)',
                                         borderRadius: '1.5rem',
@@ -260,7 +261,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                         borderBottom: '1px solid var(--border)'
                     }}>
                         <SectionLabel>PROOF</SectionLabel>
-                        <h2 className="text-h2" style={{ marginBottom: '4rem' }}>Results Delivered for Chennai Brands</h2>
+                        <h2 className="text-h2" style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)', fontSize: 'clamp(1.5rem, 5vw, 3rem)' }}>Results Delivered for Chennai Brands</h2>
                         <div style={{
                             display: 'grid',
                             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
@@ -271,7 +272,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                                     key={i}
                                     whileHover={{ y: -6 }}
                                     style={{
-                                        padding: '3rem 2rem',
+                                        padding: 'clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2rem)',
                                         background: 'var(--surface)',
                                         border: '1px solid var(--border)',
                                         borderRadius: '1.5rem',
@@ -341,11 +342,11 @@ export default function ChennaiMarketing({ onOpenModal }) {
                 <FadeInSection>
                     <div style={{
                         margin: 'var(--section-pad) 0',
-                        padding: 'clamp(5rem, 10vw, 10rem) 5vw',
+                        padding: 'clamp(3rem, 10vw, 10rem) clamp(1.5rem, 5vw, 5vw)',
                         background: 'var(--surface)',
                         border: '1px solid var(--border)',
                         textAlign: 'center',
-                        borderRadius: 'clamp(2rem, 5vw, 4rem)',
+                        borderRadius: 'clamp(1rem, 5vw, 4rem)',
                         position: 'relative',
                         overflow: 'hidden'
                     }}>
@@ -368,7 +369,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                         <button
                             onClick={onOpenModal}
                             className="btn btn-primary"
-                            style={{ padding: '1.25rem 3rem' }}
+                            style={{ padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem)', fontSize: 'clamp(0.8125rem, 2vw, 0.9375rem)' }}
                         >
                             GET YOUR FREE STRATEGY SESSION
                         </button>
