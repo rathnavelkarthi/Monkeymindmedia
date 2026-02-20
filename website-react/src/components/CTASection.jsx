@@ -26,7 +26,7 @@ const particles = Array.from({ length: 18 }, (_, i) => ({
     animationDelay: `${i * 0.4}s`,
 }))
 
-export default function CTASection() {
+export default function CTASection({ onOpenModal }) {
     return (
         <section
             id="contact"
@@ -34,7 +34,7 @@ export default function CTASection() {
                 background: 'var(--bg)',
                 position: 'relative',
                 overflow: 'hidden',
-                padding: '15rem 0'
+                padding: 'var(--section-pad) 0'
             }}
         >
             {/* Cinematic Starfield Video */}
@@ -108,8 +108,8 @@ export default function CTASection() {
                         transition={{ delay: 0.6, duration: 1, ease: [0.22, 1, 0.36, 1] }}
                         style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}
                     >
-                        <motion.a
-                            href="mailto:hello@monkeymindmedia.com"
+                        <motion.button
+                            onClick={onOpenModal}
                             whileHover={{
                                 scale: 1.02,
                                 boxShadow: '0 0 50px rgba(37,99,235,0.2)'
@@ -120,6 +120,8 @@ export default function CTASection() {
                                 padding: '1.25rem 3.5rem',
                                 background: 'var(--white)',
                                 color: 'var(--bg)',
+                                border: 'none',
+                                cursor: 'pointer',
                                 borderRadius: '1.5rem',
                                 fontWeight: 700, fontSize: '1rem',
                                 letterSpacing: '0.05em',
@@ -130,10 +132,10 @@ export default function CTASection() {
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
-                        </motion.a>
+                        </motion.button>
 
-                        <motion.a
-                            href="mailto:hello@monkeymindmedia.com?subject=Proposal Request"
+                        <motion.button
+                            onClick={onOpenModal}
                             whileHover={{
                                 scale: 1.02,
                                 background: 'rgba(255,255,255,0.02)'
@@ -145,6 +147,7 @@ export default function CTASection() {
                                 background: 'transparent',
                                 color: 'var(--white)',
                                 border: '1px solid var(--border)',
+                                cursor: 'pointer',
                                 borderRadius: '1.5rem',
                                 fontWeight: 600, fontSize: '1rem',
                                 letterSpacing: '0.05em',
@@ -152,10 +155,10 @@ export default function CTASection() {
                             }}
                         >
                             REQUEST BRIEF
-                        </motion.a>
+                        </motion.button>
                     </motion.div>
                 </FadeInSection>
             </div>
-        </section>
+        </section >
     )
 }

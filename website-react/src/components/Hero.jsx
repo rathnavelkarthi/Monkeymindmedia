@@ -20,7 +20,7 @@ function Blob({ style }) {
     )
 }
 
-export default function Hero() {
+export default function Hero({ onOpenModal }) {
     const { scrollYProgress } = useScroll()
     const y1 = useTransform(scrollYProgress, [0, 1], [0, -400])
     const y2 = useTransform(scrollYProgress, [0, 1], [0, -200])
@@ -30,17 +30,17 @@ export default function Hero() {
     const maskOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
 
     const headline = [
-        { text: 'ARCHITECTING', highlight: false },
-        { text: 'SYSTEMIC', highlight: false },
-        { text: 'MARKET', highlight: false },
-        { text: 'DOMINANCE', highlight: true },
+        { text: 'STRATEGIC AI', highlight: false },
+        { text: 'SYSTEMS &', highlight: false },
+        { text: 'INTELLIGENCE', highlight: true },
+        { text: 'INFRASTRUCTURE', highlight: true },
     ]
 
     return (
         <section
             className="aurora-mesh"
             style={{
-                minHeight: '115dvh',
+                minHeight: '90vh',
                 display: 'flex',
                 alignItems: 'center',
                 position: 'relative',
@@ -115,7 +115,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Vanguard Mask-Reveal Headline */}
-                <div style={{ marginBottom: '4rem' }}>
+                <h1 style={{ marginBottom: '4rem' }}>
                     {headline.map((line, i) => (
                         <div key={i} style={{ overflow: 'hidden', marginBottom: '-0.1em' }}>
                             <motion.div
@@ -135,14 +135,15 @@ export default function Hero() {
                                     WebkitBackgroundClip: line.highlight ? 'text' : 'unset',
                                     backgroundClip: line.highlight ? 'text' : 'unset',
                                     WebkitTextFillColor: line.highlight ? 'transparent' : 'unset',
-                                    paddingRight: '0.05em' // Prevent clipping
+                                    paddingRight: '0.05em', // Prevent clipping
+                                    hyphens: 'none'
                                 }}
                             >
                                 {line.text}
                             </motion.div>
                         </div>
                     ))}
-                </div>
+                </h1>
 
                 {/* Analytical Subtext */}
                 <motion.p
@@ -153,14 +154,15 @@ export default function Hero() {
                         fontSize: 'clamp(0.875rem, 2vw, 1.25rem)',
                         color: 'var(--gray-500)',
                         lineHeight: 1.8,
-                        maxWidth: '600px',
+                        maxWidth: '750px',
                         marginBottom: 'clamp(3rem, 5vw, 6rem)',
                         fontWeight: 400,
                         letterSpacing: '0.02em'
                     }}
                 >
-                    We engineer systemic brand advantages through high-fidelity AI automation,
-                    clinical performance systems, and mathematical creative intelligence.
+                    Monkey Mind Media engineers AI automation platforms, political intelligence systems,
+                    enterprise performance marketing engines, and AI-powered creative infrastructure
+                    designed for systemic dominance.
                 </motion.p>
 
                 {/* CTAs with Magnetic Intent */}
@@ -174,20 +176,27 @@ export default function Hero() {
                         flexWrap: 'wrap'
                     }}
                 >
-                    <a href="#work" className="btn btn-primary">
+                    <button
+                        onClick={onOpenModal}
+                        className="btn btn-primary"
+                    >
                         INITIATE STRATEGY
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                    </a>
-                    <a href="#contact" className="btn" style={{
-                        border: '1px solid var(--border)',
-                        color: 'var(--gray-300)',
-                        background: 'transparent',
-                        backdropFilter: 'blur(20px)'
-                    }}>
+                    </button>
+                    <button
+                        onClick={onOpenModal}
+                        className="btn"
+                        style={{
+                            border: '1px solid var(--border)',
+                            color: 'var(--gray-300)',
+                            background: 'transparent',
+                            backdropFilter: 'blur(20px)'
+                        }}
+                    >
                         REQUEST BRIEF
-                    </a>
+                    </button>
                 </motion.div>
 
                 {/* Progress Indicator Parallax */}

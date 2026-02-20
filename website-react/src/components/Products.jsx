@@ -51,11 +51,11 @@ export default function Products() {
                 <FadeInText>
                     <div className="section-label">SYSTEM ARCHITECTURE</div>
                     <h2 className="text-h1" style={{ marginBottom: '2.5rem' }}>
-                        INTEGRATED<br />ADVANTAGE.
+                        AI SYSTEMS ENGINEERED<br />FOR CONTROL.
                     </h2>
                     <p style={{ color: 'var(--gray-500)', fontSize: '1.25rem', marginBottom: '8rem', maxWidth: '650px', lineHeight: 1.8 }}>
-                        We deploy modular system components engineered for measuring
-                        and maintaining systemic brand dominance.
+                        We build modular intelligence systems across four primary domains.
+                        Each deployment is structured for scalability, security, and strategic control.
                     </p>
                 </FadeInText>
 
@@ -108,7 +108,7 @@ export default function Products() {
                                 <div>
                                     {p.tag && (
                                         <div style={{
-                                            fontSize: '9px', fontWeight: 800, letterSpacing: '0.4em',
+                                            fontSize: '11px', fontWeight: 800, letterSpacing: '0.35em',
                                             padding: '0.5rem 1.25rem',
                                             background: 'rgba(255,255,255,0.03)',
                                             border: '1px solid var(--border)',
@@ -152,8 +152,8 @@ export default function Products() {
 
                                 <div style={{
                                     marginTop: '4rem', display: 'flex', alignItems: 'center',
-                                    gap: '0.75rem', fontSize: '10px', fontWeight: 800, color: 'var(--blue)',
-                                    letterSpacing: '0.3em', textTransform: 'uppercase'
+                                    gap: '0.75rem', fontSize: '11px', fontWeight: 800, color: 'var(--blue)',
+                                    letterSpacing: '0.25em', textTransform: 'uppercase'
                                 }}>
                                     INITIATE SEQUENCE
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

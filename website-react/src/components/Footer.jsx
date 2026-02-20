@@ -26,9 +26,8 @@ export default function Footer() {
                             fontSize: '1.5rem', letterSpacing: '-0.04em',
                             marginBottom: '1.5rem',
                         }}>
-                            <span style={{ color: '#fff' }}>Monkey</span>
-                            <span style={{ color: 'var(--blue)' }}>.</span>
-                            <span style={{ color: 'var(--gray-500)' }}>Mind</span>
+                            <span style={{ color: '#fff' }}>monkeymind</span>
+                            <span style={{ color: 'var(--blue)' }}>media</span>
                         </div>
                         <p style={{
                             fontSize: '0.9375rem', color: 'var(--gray-500)',

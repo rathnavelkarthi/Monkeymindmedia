@@ -30,7 +30,7 @@ export default function TrustStrip() {
                 }} />
 
                 <p style={{
-                    fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase',
+                    fontSize: '0.8125rem', letterSpacing: '0.12em', textTransform: 'uppercase',
                     color: 'var(--gray-400)', textAlign: 'center', marginBottom: '1.5rem',
                 }}>
                     Trusted by founders, political leaders, startups & global creators

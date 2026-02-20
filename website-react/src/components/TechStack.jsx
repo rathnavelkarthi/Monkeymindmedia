@@ -99,11 +99,11 @@ export default function TechStack() {
                 <FadeInText>
                     <div className="section-label">INFRASTRUCTURE SYSTEMS</div>
                     <h2 className="text-h1" style={{ marginBottom: '2.5rem' }}>
-                        SYSTEMIC<br />LITURGY.
+                        ENTERPRISE AI<br />STACK.
                     </h2>
                     <p style={{ color: 'var(--gray-500)', fontSize: '1.25rem', marginBottom: '8rem', maxWidth: '650px', lineHeight: 1.8 }}>
-                        We architect precision-engineered systems using a clinical stack
-                        optimized for global scalability and systemic brand advantage.
+                        Monkey Mind Media operates on a modern AI and cloud-native infrastructure stack,
+                        designed for precision and clinical operational transparency.
                     </p>
                 </FadeInText>
 
@@ -112,7 +112,7 @@ export default function TechStack() {
                         <FadeInSection key={cat} delay={ci * 0.1}>
                             <div>
                                 <div style={{
-                                    fontSize: '9px', fontWeight: 800, letterSpacing: '0.4em',
+                                    fontSize: '11px', fontWeight: 800, letterSpacing: '0.35em',
                                     textTransform: 'uppercase', color: 'var(--gray-600)',
                                     marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem'
                                 }}>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
-export default function Nav() {
+export default function Nav({ onOpenModal }) {
     const [scrolled, setScrolled] = useState(false)
     const [progress, setProgress] = useState(0)
     const [menuOpen, setMenuOpen] = useState(false)
@@ -51,9 +51,8 @@ export default function Nav() {
                 <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     {/* Logo */}
                     <a href="/" style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.04em' }}>
-                        <span style={{ color: '#fff' }}>Monkey</span>
-                        <span style={{ color: 'var(--blue)' }}>.</span>
-                        <span style={{ color: 'var(--gray-500)' }}>Mind</span>
+                        <span style={{ color: '#fff' }}>monkeymind</span>
+                        <span style={{ color: 'var(--blue)' }}>media</span>
                     </a>
 
                     {/* Desktop links */}
@@ -74,9 +73,26 @@ export default function Nav() {
                     </ul>
 
                     {/* CTA */}
-                    <a href="#contact" className="btn btn-primary hidden-mobile" style={{ padding: '0.75rem 2rem', fontSize: '0.875rem' }}>
-                        Partner With Us
-                    </a>
+                    <motion.button
+                        onClick={onOpenModal}
+                        whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(37,99,235,0.4)' }}
+                        whileTap={{ scale: 0.95 }}
+                        style={{
+                            padding: '0.75rem 2rem',
+                            background: 'var(--blue)',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '0.75rem',
+                            fontWeight: 700,
+                            fontSize: '0.75rem',
+                            letterSpacing: '0.15em',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease'
+                        }}
+                        className="hidden-mobile"
+                    >
+                        INITIATE
+                    </motion.button>
 
                     {/* Burger */}
                     <button
@@ -103,9 +119,13 @@ export default function Nav() {
                                 {l.label}
                             </a>
                         ))}
-                        <a href="#contact" className="btn btn-primary" style={{ marginTop: '1rem', width: '100%', justifyContent: 'center' }}>
-                            Start a Project
-                        </a>
+                        <button
+                            onClick={onOpenModal}
+                            className="btn btn-primary"
+                            style={{ marginTop: '1rem', width: '100%', justifyContent: 'center', padding: '1.25rem 3rem' }}
+                        >
+                            INITIATE BRIEFING
+                        </button>
                     </div>
                 )}
             </motion.nav>

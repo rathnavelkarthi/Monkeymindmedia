@@ -17,8 +17,8 @@ export default function About() {
             <div className="container">
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-                    gap: '8rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+                    gap: 'clamp(3rem, 10vw, 8rem)',
                     alignItems: 'center',
                 }}>
                     {/* Left — Text */}
@@ -26,12 +26,16 @@ export default function About() {
                         <FadeInText delay={0}>
                             <div className="section-label">THE FIRM</div>
                             <h2 className="text-h1" style={{ fontFamily: 'var(--font-head)', marginBottom: '2rem', letterSpacing: '-0.04em' }}>
-                                WE ARE AN{' '}
-                                <span className="gradient-text">AI-FIRST</span>
-                                <br />SYSTEMS FIRM.
+                                AN AI-FIRST STRATEGIC<br /><span className="gradient-text">INTELLIGENCE FIRM.</span>
                             </h2>
-                            <p style={{ color: 'var(--gray-400)', fontSize: '1.25rem', lineHeight: 1.8, marginBottom: '4rem', maxWidth: '600px' }}>
-                                We architect the intelligence systems and creative pipelines that define modern brand leadership. From complex political intelligence to high-fidelity AI video automation — every output is engineered for total market dominance.
+                            <p style={{ color: 'var(--gray-400)', fontSize: '1.25rem', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                                Monkey Mind Media is not a traditional marketing agency. We are an AI systems company specializing in strategic intelligence infrastructure.
+                            </p>
+                            <p style={{ color: 'var(--gray-500)', fontSize: '1.125rem', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                                We design, deploy, and scale high-performance automation frameworks that control narrative, performance, acquisition, and operational leverage. From AI video production pipelines to political campaign intelligence platforms, our systems are engineered for measurable advantage.
+                            </p>
+                            <p style={{ color: 'var(--gray-500)', fontSize: '1.125rem', lineHeight: 1.8, marginBottom: '4rem', maxWidth: '600px' }}>
+                                Our approach is clinical. Data-driven. Infrastructure-led. Every deployment is designed for scale, automation, and sustained market control.
                             </p>
                         </FadeInText>
 

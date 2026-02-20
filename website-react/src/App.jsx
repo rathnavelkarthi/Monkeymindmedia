@@ -2,6 +2,16 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Home from './pages/Home'
 import CaseStudy from './pages/CaseStudy'
+import Founder from './pages/Founder'
+import ChiefMarketingHead from './pages/ChiefMarketingHead'
+import StrategicBriefingModal from './components/StrategicBriefingModal'
+import {
+  AIVideoProduction,
+  PoliticalIntelligence,
+  WhatsAppAutomation,
+  AISaaSDeployment,
+  PerformanceMarketing
+} from './pages/SEOPages'
 
 function UseCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
@@ -37,21 +47,34 @@ function UseCursor() {
   )
 }
 
-// Simple hash-based router
-function Router() {
-  const [hash, setHash] = useState(window.location.hash)
+// SEO-optimized Path Router
+function Router({ onOpenModal }) {
+  const [path, setPath] = useState(window.location.pathname)
 
   useEffect(() => {
-    const handlePop = () => setHash(window.location.hash)
-    window.addEventListener('hashchange', handlePop)
-    return () => window.removeEventListener('hashchange', handlePop)
+    const handlePopState = () => setPath(window.location.pathname)
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
-  if (hash.startsWith('#/case-study')) return <CaseStudy />
-  return <Home />
+  // Landing Page Routing
+  if (path === '/ai-video-production') return <AIVideoProduction />
+  if (path === '/political-intelligence-platform') return <PoliticalIntelligence />
+  if (path === '/whatsapp-ai-automation') return <WhatsAppAutomation />
+  if (path === '/ai-saas-development') return <AISaaSDeployment />
+  if (path === '/performance-marketing-systems') return <PerformanceMarketing />
+  if (path === '/chief-marketing-head' || path === '/vetrivel') return <ChiefMarketingHead onOpenModal={onOpenModal} />
+  if (path === '/founder' || path === '/rathnavel') return <Founder onOpenModal={onOpenModal} />
+
+  // Hash/Anchor fallbacks for home page
+  if (window.location.hash.startsWith('#/case-study')) return <CaseStudy />
+
+  return <Home onOpenModal={onOpenModal} />
 }
 
 export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <>
       <div className="noise" />
@@ -64,9 +87,13 @@ export default function App() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.8, 0, 0.1, 1] }}
         >
-          <Router />
+          <Router onOpenModal={() => setIsModalOpen(true)} />
         </motion.div>
       </AnimatePresence>
+      <StrategicBriefingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   )
 }
