@@ -200,32 +200,37 @@ export default function WorkGrid() {
     const current = categories.find(c => c.id === active)
 
     return (
-        <section id="work" style={{ background: 'var(--bg)', padding: 'var(--section-pad) 0' }}>
+        <section id="work" style={{
+            background: 'var(--bg)',
+            padding: 'var(--section-pad) 0',
+            position: 'relative'
+        }}>
             <div className="container">
                 <FadeInText>
-                    <div className="section-label">SELECTED WORK</div>
-                    <h2 className="text-h2" style={{ fontFamily: 'var(--font-head)', marginBottom: '4rem' }}>
-                        Recently Crafted
+                    <div className="section-label">SELECTED INTELLIGENCE</div>
+                    <h2 className="text-h1" style={{ marginBottom: '6rem' }}>
+                        MATHEMATICAL<br />OUTPUT.
                     </h2>
                 </FadeInText>
 
-                {/* Tabs */}
-                <div style={{ display: 'flex', gap: '1rem', marginBottom: '4rem', flexWrap: 'wrap' }}>
+                {/* Tabs — Vanguard Style */}
+                <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '6rem', flexWrap: 'wrap' }}>
                     {categories.map(cat => (
                         <button
                             key={cat.id}
                             onClick={() => setActive(cat.id)}
                             style={{
-                                padding: '0.75rem 1.75rem',
+                                padding: '1rem 2.25rem',
                                 borderRadius: '9999px',
-                                fontSize: '0.9rem', fontWeight: 600,
+                                fontSize: '10px', fontWeight: 800,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.3em',
                                 border: '1px solid',
                                 borderColor: active === cat.id ? 'var(--blue)' : 'var(--border)',
-                                background: active === cat.id ? 'rgba(37,99,235,0.1)' : 'transparent',
-                                color: active === cat.id ? 'var(--white)' : 'var(--gray-400)',
+                                background: active === cat.id ? 'rgba(37,99,235,0.05)' : 'transparent',
+                                color: active === cat.id ? 'var(--white)' : 'var(--gray-500)',
                                 cursor: 'pointer',
-                                transition: 'all 0.4s var(--luxury-ease)',
-                                letterSpacing: '0.02em'
+                                transition: 'all 0.6s var(--vanguard-ease)',
                             }}
                         >
                             {cat.label}
@@ -237,14 +242,14 @@ export default function WorkGrid() {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={active}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -30 }}
-                        transition={smooth}
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.98 }}
+                        transition={{ duration: 0.8, ease: [0.8, 0, 0.1, 1] }}
                         style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                            gap: '2rem',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+                            gap: '3rem',
                         }}
                     >
                         {current.projects.map((p, i) => (

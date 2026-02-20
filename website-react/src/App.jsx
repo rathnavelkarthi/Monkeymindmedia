@@ -30,7 +30,7 @@ function UseCursor() {
       <motion.div
         className="cursor-ring"
         animate={{ x: pos.x, y: pos.y }}
-        transition={{ type: 'spring', stiffness: 200, damping: 20, mass: 0.5 }}
+        transition={{ type: 'spring', stiffness: 350, damping: 35, mass: 0.5 }}
         style={{ left: 0, top: 0, position: 'fixed' }}
       />
     </>
@@ -39,7 +39,14 @@ function UseCursor() {
 
 // Simple hash-based router
 function Router() {
-  const hash = window.location.hash
+  const [hash, setHash] = useState(window.location.hash)
+
+  useEffect(() => {
+    const handlePop = () => setHash(window.location.hash)
+    window.addEventListener('hashchange', handlePop)
+    return () => window.removeEventListener('hashchange', handlePop)
+  }, [])
+
   if (hash.startsWith('#/case-study')) return <CaseStudy />
   return <Home />
 }
@@ -52,10 +59,10 @@ export default function App() {
       <AnimatePresence mode="wait">
         <motion.div
           key={window.location.hash}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.8, 0, 0.1, 1] }}
         >
           <Router />
         </motion.div>
