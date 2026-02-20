@@ -90,8 +90,8 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                     {/* Header */}
                     <div style={{ padding: '2.5rem 3rem', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                            <div style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--blue)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Strategic Intake</div>
-                            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--white)', letterSpacing: '0.05em' }}>INITIATE STRATEGIC BRIEFING</h2>
+                            <div style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--blue)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Project Inquiry</div>
+                            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--white)', letterSpacing: '0.05em' }}>START A PROJECT WITH US</h2>
                         </div>
                         <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'var(--gray-600)', cursor: 'pointer', padding: '0.5rem' }}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
@@ -104,41 +104,41 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                 <div style={{ width: '80px', height: '80px', background: 'rgba(37,99,235,0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="3"><path d="M20 6L9 17l-5-5" /></svg>
                                 </div>
-                                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem' }}>INTAKE CONFIRMED</h3>
-                                <p style={{ color: 'var(--gray-400)', lineHeight: 1.6 }}>Your strategic briefing has been ingested. A command representative will initiate contact shortly.</p>
-                                <button onClick={onClose} className="btn btn-primary" style={{ marginTop: '2.5rem' }}>CLOSE ARCHITECTURE</button>
+                                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem' }}>SUBMITTED SUCCESSFULLY</h3>
+                                <p style={{ color: 'var(--gray-400)', lineHeight: 1.6 }}>Thank you for your interest. Our team will review your inquiry and get in touch with you shortly.</p>
+                                <button onClick={onClose} className="btn btn-primary" style={{ marginTop: '2.5rem' }}>CLOSE</button>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                                 <div style={{ gridColumn: 'span 2' }}>
                                     <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Full Name *</label>
                                     <input
-                                        type="text" required placeholder="IDENTIFY OPERATOR"
+                                        type="text" required placeholder="Your Name"
                                         value={formData.full_name} onChange={e => setFormData({ ...formData, full_name: e.target.value })}
                                         style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
                                     />
                                 </div>
 
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Organization</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Company / Organization</label>
                                     <input
-                                        type="text" placeholder="ENTITY NAME"
+                                        type="text" placeholder="Company Name"
                                         value={formData.organization} onChange={e => setFormData({ ...formData, organization: e.target.value })}
                                         style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
                                     />
                                 </div>
 
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Role Title</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Role / Title</label>
                                     <input
-                                        type="text" placeholder="STRATEGIC POSITION"
+                                        type="text" placeholder="Your Title"
                                         value={formData.role_title} onChange={e => setFormData({ ...formData, role_title: e.target.value })}
                                         style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
                                     />
                                 </div>
 
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Strategic Domain *</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Project Type *</label>
                                     <select
                                         required
                                         value={formData.domain_selected} onChange={e => setFormData({ ...formData, domain_selected: e.target.value })}
@@ -152,7 +152,7 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                 </div>
 
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Budget Tier</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Estimated Budget</label>
                                     <select
                                         value={formData.budget_tier} onChange={e => setFormData({ ...formData, budget_tier: e.target.value })}
                                         style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem', appearance: 'none' }}
@@ -165,25 +165,25 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                 </div>
 
                                 <div style={{ gridColumn: 'span 2' }}>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Strategic Objective *</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Project Goals *</label>
                                     <textarea
-                                        required rows="4" placeholder="DEFINE THE MISSION"
+                                        required rows="4" placeholder="Briefly describe your goals"
                                         value={formData.objective} onChange={e => setFormData({ ...formData, objective: e.target.value })}
                                         style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem', resize: 'none' }}
                                     />
                                 </div>
 
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Primary Email *</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Email Address *</label>
                                     <input
-                                        type="email" required placeholder="CONTACT@DOMAIN.COM"
+                                        type="email" required placeholder="you@company.com"
                                         value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })}
                                         style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
                                     />
                                 </div>
 
                                 <div>
-                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>WhatsApp / Signal</label>
+                                    <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Number</label>
                                     <input
                                         type="text" placeholder="+91 XXXX XXX XXX"
                                         value={formData.whatsapp} onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
@@ -198,10 +198,10 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                         className="btn btn-primary"
                                         style={{ width: '100%', padding: '1.25rem', opacity: status === 'submitting' ? 0.5 : 1 }}
                                     >
-                                        {status === 'submitting' ? 'PROCESSING INTAKE...' : 'INITIATE STRATEGIC BRIEFING'}
+                                        {status === 'submitting' ? 'SENDING...' : 'SUBMIT PROJECT INQUIRY'}
                                     </button>
                                     {status === 'error' && (
-                                        <div style={{ color: '#ef4444', fontSize: '0.8rem', textAlign: 'center', marginTop: '1rem', fontWeight: 600 }}>SYSTEM ERROR: INTAKE FAILED. PLEASE RETRY OR CONTACT DIRECTLY.</div>
+                                        <div style={{ color: '#ef4444', fontSize: '0.8rem', textAlign: 'center', marginTop: '1rem', fontWeight: 600 }}>ERROR: SUBMISSION FAILED. PLEASE TRY AGAIN.</div>
                                     )}
                                 </div>
                             </form>
