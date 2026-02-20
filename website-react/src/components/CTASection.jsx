@@ -31,21 +31,33 @@ export default function CTASection() {
         <section
             id="contact"
             style={{
-                background: 'linear-gradient(135deg, #050a14 0%, #0d1a3a 50%, #050a14 100%)',
+                background: 'var(--bg)',
                 position: 'relative',
                 overflow: 'hidden',
                 padding: '15rem 0'
             }}
         >
-            {/* Floating particles */}
-            {particles.map((p, i) => <Particle key={i} style={{ top: p.top, left: p.left }} />)}
+            {/* Cinematic Starfield Video */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-30 hidden lg:block"
+                >
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-motion-of-abstract-blue-lines-and-particles-20412-large.mp4" type="video/mp4" />
+                </video>
+                {/* Fallback & Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#050a14] via-[#0d1a3a]/80 to-[#050a14]" />
+                <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'radial-gradient(circle at 50% 50%, rgba(37,99,235,0.06) 0%, transparent 60%)',
+                }} />
+            </div>
 
-            {/* Radial depth overlay */}
-            <div style={{
-                position: 'absolute', inset: 0,
-                background: 'radial-gradient(circle at 50% 50%, rgba(37,99,235,0.06) 0%, transparent 60%)',
-                pointerEvents: 'none',
-            }} />
+            {/* Floating particles (Legacy fallback/depth) */}
+            {particles.map((p, i) => <Particle key={i} style={{ top: p.top, left: p.left }} />)}
 
             <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                 <FadeInSection>

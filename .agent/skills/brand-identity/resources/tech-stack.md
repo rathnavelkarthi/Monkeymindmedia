@@ -1,47 +1,35 @@
-# Preferred Tech Stack & Implementation Rules
-
-## Core Stack (Website)
-- **Markup:** Semantic HTML5
-- **Styling:** Vanilla CSS with custom properties (CSS variables from design-tokens.json)
-- **Scripting:** Vanilla JavaScript (ES6+) — no jQuery
-- **Fonts:** Google Fonts — Syne (headings), Inter (body)
-- **Icons:** Inline SVG or Lucide icons via CDN
+# Preferred Tech Stack & Implementation Rules (Vanguard Standard)
 
 ## Core Stack (Web App)
-- **Framework:** React 18+ with TypeScript
-- **Styling:** Tailwind CSS (mandatory — no plain CSS or styled-components)
-- **Components:** shadcn/ui as primitive base
-- **Icons:** Lucide React
+- **Framework:** React 19+ (Concurrent Mode optimized)
+- **Build Tool:** Vite 7+
+- **Styling:** Tailwind CSS 4+ (Mainly for utility logic)
+- **Visuals:** Framer Motion 12+ (Mandatory for high-fidelity Vanguard easing)
+- **Typography:** Space Grotesk (Headings), Inter (Body)
 
-## Implementation Guidelines
+## Implementation Guidelines (The Vanguard Law)
 
-### CSS Architecture (Vanilla projects)
-- Define all tokens as `--var` CSS custom properties on `:root`
-- Use `clamp()` for all fluid typography sizes
-- Use CSS Grid + Flexbox for layout
-- Glassmorphism: `background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08);`
-- Animations: prefer `transform` and `opacity` for GPU-accelerated transitions
+### Visual Hierarchy & Spacing
+- **Section Padding:** Mandatory `var(--section-pad)` (15rem) for world-class whitespace.
+- **Section Labels:** 10px, 0.4em letter-spacing, uppercase, `--blue`.
+- **H1:** Massive scale (9rem max), line-height 0.82, uppercase, tracking -0.06em.
 
-### Scroll Animations
-- Use `IntersectionObserver` with `threshold: 0.15` for reveal animations
-- Initial state: `opacity: 0; transform: translateY(32px)`
-- Revealed state: `opacity: 1; transform: translateY(0); transition: 600ms ease`
-- Add `will-change: transform, opacity` on animated elements
+### Vanguard Motion Strategy
+- **Easing:** Strictly use `var(--vanguard-ease)` (0.8, 0, 0.1, 1) for deliberate, expensive transitions.
+- **Mask Reveals:** High-impact headings MUST use overflow-masked reveal animations.
+- **Glow Cursors:** Desktop experiences MUST utilize atmospheric radial glow cursors (600px range).
 
-### Forms
-- Labels always above inputs
-- Real-time validation on `blur` event
-- Visual feedback: green border on valid, red on invalid
-- Submit button shows loading state while processing
+### Materiality: Glass 2.0
+- **Refraction:** `backdrop-filter: blur(40px) saturate(180%) contrast(110%);`
+- **Surface:** `rgba(255, 255, 255, 0.02)` background with `1px solid rgba(255, 255, 255, 0.03)`.
+- **Noise:** Global 1.5% noise overlay mandatory for clinical texture.
 
-### Performance
-- Lazy-load images using `loading="lazy"`
-- Use `preconnect` for Google Fonts
-- Minimize JavaScript — prefer CSS animations where possible
+### Performance & Engineering
+- **Blueprint Geometry:** Complex sections should utilize SVG blueprint patterns or grid systems to suggest technical rigour.
+- **GPU Acceleration:** All motion MUST be on `transform` and `opacity` properties.
 
 ## Forbidden Patterns
-- No jQuery
-- No Bootstrap
-- No inline styles (use CSS custom properties instead)
-- No `!important` unless overriding third-party styles
-- No pixel-fixed font sizes — always use `rem` or `clamp()`
+- **No standard kerning:** Large titles must be tightly squeezed.
+- **No bright gradients:** Use the "Aurora Mesh" system (linear interpolation between deep blues/blacks).
+- **No generic buttons:** All CTAs must have magnetic intent or tactical SVG indicators.
+- **No Small Text:** Essential body content must be 1.125rem+ for premium legibility.

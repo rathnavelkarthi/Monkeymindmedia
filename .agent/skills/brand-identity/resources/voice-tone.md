@@ -1,53 +1,46 @@
-# Copywriting: Voice & Tone Guidelines
+# Copywriting: Vanguard Voice & Tone (The systems Lexicon)
 
-## Brand Personality
-Monkey Mind Media is a creative media powerhouse. The voice is:
-- **Bold and confident** — owns the room without being arrogant
-- **Creatively charged** — language that sparks imagination
-- **Direct and efficient** — no filler, every word earns its place
-- **Approachable expert** — knowledgeable but never condescending
+## Brand Persona: The Systems Intelligence Firm
+Monkey Mind Media (Vanguard) is no longer a "creative shop"—it is an AI-native engineering firm that manufactures market dominance. The voice is:
+- **Clinical & Precise** — Every word is a data point. No fluff.
+- **Scientifically Dominant** — Confident to the point of being a mathematical certainty.
+- **Technical yet Philosophical** — Uses terminology like "Liturgy", "Architecture", and "Systemic" to elevate the brand.
+- **Architectural** — Speaks in terms of building, scaling, and engineering.
 
-## Grammar & Mechanics
+## Grammar & Mechanics (Vanguard Standard)
 
-- **Headings (H1, H2):** Title Case
-- **Subheadings (H3+):** Sentence case
-- **Punctuation:** Avoid exclamation points in interface copy. Use them only in celebration/success moments.
-- **Voice:** Active over passive. "We craft stories" not "Stories are crafted by us."
-- **Sentences:** Short and punchy for impact. Vary rhythm — one long sentence, two short.
+- **Headings (H1, H2):** ALL UPPERCASE. Period at the end for finality (e.g., "MARKET DOMINANCE.").
+- **Subheadings (H3+):** Sentence case or technical micro-labels.
+- **Punctuation:** Periods only for finality in headings. No exclamation points.
+- **Voice:** Declarative. "We engineer the future" not "We can help you."
 
-## Vocabulary Guide
+## Vocabulary Guide (The Lexicon)
 
 | Avoid | Use Instead |
 |:---|:---|
-| "Utilize" | "Use" |
-| "In order to" | "To" |
-| "Leverage" | "Use" or "Apply" |
-| "Solutions" | Be specific — "videos", "campaigns", "content" |
-| "World-class" | Show, don't tell — use proof/results instead |
-| "Synergy" | Never use this |
-| "We are passionate about" | "We obsess over" / "We live for" |
+| "Ideas" | "Synthesized Intelligence" |
+| "Creative" | "Systemic Creative" |
+| "Help you grow" | "Engineer systemic advantage" |
+| "Modern" | "Production-Grade" |
+| "Contact us" | "Initiate Strategy" |
+| "Our projects" | "Mathematical Output" |
 
 ## Headline Formulas
 
-**Hero headlines** — make a bold, provocative claim:
-- `[Powerful verb] + [what] + [for whom]`
-- Example: "We Build Brands That Move People"
+**Hero headlines** — Mathematical Declarations:
+- `[Abstract Systemic Concept] + [Action] + [Dominant Result].`
+- Example: "ARCHITECTING SYSTEMIC MARKET DOMINANCE."
 
-**Service descriptions** — lead with outcome, follow with method:
-- Example: "Stories that sell. From concept to final cut, we handle every frame."
-
-**CTA copy:**
-- Primary: "Start Your Project" / "Let's Create"
-- Secondary: "See Our Work" / "Learn More"
-- Avoid: "Submit", "Click Here", "Learn More" as primary CTA
+**CTA copy (Tactical):**
+- Primary: "INITIATE SEQUENCE" / "INITIATE STRATEGY"
+- Secondary: "REQUEST BRIEF" / "SYSTEMS OVERVIEW"
+- Forbidden: "Get in touch", "Buy now", "Click here"
 
 ## Tone by Context
 
 | Context | Tone |
 |:---|:---|
-| Hero / homepage | Bold, cinematic, inspiring |
-| Services | Confident, results-focused |
-| About | Warm, authentic, story-driven |
-| Contact | Inviting, pressure-free |
-| Error messages | Clear, helpful, non-technical |
-| Success messages | Celebratory but brief |
+| Hero | Absolute, Scientific, Dominant |
+| Work / Portfolio | Analytical, Evidence-based |
+| Infrastructure | Clinical, High-Performance |
+| Contact | Professional, High-Threshold |

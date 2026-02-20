@@ -86,7 +86,29 @@ export default function Hero() {
                 }}
             />
 
-            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            {/* Cinematic Background Video */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-40 hidden lg:block"
+                    poster="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=1920"
+                >
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-abstract-loop-of-blue-particles-73-large.mp4" type="video/mp4" />
+                </video>
+                {/* Mobile Fallback Image */}
+                <div
+                    className="block lg:hidden w-full h-full bg-cover bg-center opacity-30"
+                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=1920')` }}
+                />
+                {/* Clinical Overlays */}
+                <div className="absolute inset-0 bg-black/70 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+            </div>
+
+            <div className="container relative z-10">
                 {/* Vanguard Micro-label */}
                 <motion.div
                     initial={{ opacity: 0, letterSpacing: '0.1em' }}

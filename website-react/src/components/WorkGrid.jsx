@@ -203,9 +203,24 @@ export default function WorkGrid() {
         <section id="work" style={{
             background: 'var(--bg)',
             padding: 'var(--section-pad) 0',
-            position: 'relative'
+            position: 'relative',
+            overflow: 'hidden'
         }}>
-            <div className="container">
+            {/* Motion Texture Layer */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-15 hidden lg:block"
+                >
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-dots-and-lines-loop-21151-large.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-black/40" />
+            </div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <FadeInText>
                     <div className="section-label">SELECTED INTELLIGENCE</div>
                     <h2 className="text-h1" style={{ marginBottom: '6rem' }}>
