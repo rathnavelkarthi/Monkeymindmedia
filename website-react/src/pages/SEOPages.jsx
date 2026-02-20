@@ -30,7 +30,7 @@ export const AIVideoProduction = () => (
         cta={{
             title: 'Ready for Visual Dominance?',
             text: 'Transition your creative production into a high-fidelity AI automation system.',
-            btn: 'INITIATE VIDEO STRATEGY'
+            btn: 'GET QUOTE'
         }}
         video="https://assets.mixkit.co/videos/preview/mixkit-futuristic-abstract-loop-of-blue-particles-73-large.mp4"
         structuredData={{
@@ -73,7 +73,7 @@ export const PoliticalIntelligence = () => (
         cta={{
             title: 'Architect Your Victory',
             text: 'Control the narrative with infrastructure-level political intelligence.',
-            btn: 'REQUEST POLITICAL BRIEF'
+            btn: 'GET QUOTE'
         }}
         video="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-dots-and-lines-loop-21151-large.mp4"
         structuredData={{
@@ -111,7 +111,7 @@ export const WhatsAppAutomation = () => (
         cta={{
             title: 'Automate Your Dominance',
             text: 'Deploy an intelligent WhatsApp infrastructure that never sleeps.',
-            btn: 'START AUTOMATION BRIEF'
+            btn: 'GET QUOTE'
         }}
         video="https://videos.pexels.com/video-files/3129910/3129910-sd_640_360_25fps.mp4"
         structuredData={{
@@ -149,7 +149,7 @@ export const AISaaSDeployment = () => (
         cta={{
             title: 'Build Your Software Legacy',
             text: 'Transform your vision into a high-performance AI SaaS platform.',
-            btn: 'INITIATE SAAS BRIEF'
+            btn: 'GET QUOTE'
         }}
         video="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-dots-and-lines-loop-21151-large.mp4"
         structuredData={{
@@ -187,7 +187,7 @@ export const PerformanceMarketing = () => (
         cta={{
             title: 'Command Your Growth',
             text: 'Switch to a mathematical performance system designed for dominance.',
-            btn: 'INITIATE GROWTH STRATEGY'
+            btn: 'GET QUOTE'
         }}
         video="https://assets.mixkit.co/videos/preview/mixkit-slow-motion-of-abstract-blue-lines-and-particles-20412-large.mp4"
         structuredData={{

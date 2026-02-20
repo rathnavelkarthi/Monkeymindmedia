@@ -141,7 +141,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                             scale their digital performance with systems-first marketing infrastructure.
                         </p>
                         <button onClick={onOpenModal} className="btn btn-primary" style={{ padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem)', fontSize: 'clamp(0.8125rem, 2vw, 0.9375rem)' }}>
-                            GET A FREE STRATEGY SESSION
+                            GET QUOTE
                         </button>
                     </FadeInText>
                 </div>
@@ -371,7 +371,7 @@ export default function ChennaiMarketing({ onOpenModal }) {
                             className="btn btn-primary"
                             style={{ padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem)', fontSize: 'clamp(0.8125rem, 2vw, 0.9375rem)' }}
                         >
-                            GET YOUR FREE STRATEGY SESSION
+                            GET YOUR FREE QUOTE
                         </button>
                     </div>
                 </FadeInSection>

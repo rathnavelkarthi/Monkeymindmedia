@@ -168,7 +168,7 @@ export default function LocalSEOTemplate({
                             {heroSubtext}
                         </p>
                         <button onClick={onOpenModal} className="btn btn-primary" style={{ padding: 'clamp(0.875rem, 2vw, 1.125rem) clamp(1.5rem, 4vw, 2.5rem)', fontSize: 'clamp(0.8125rem, 2vw, 0.9375rem)' }}>
-                            {isBlog ? 'TALK TO AN EXPERT' : 'GET A FREE STRATEGY SESSION'}
+                            {isBlog ? 'CONTACT' : 'GET QUOTE'}
                         </button>
                     </FadeInText>
                 </div>
@@ -326,7 +326,7 @@ export default function LocalSEOTemplate({
                             {ctaText || 'Get a free strategy session with our Chennai marketing experts.'}
                         </p>
                         <button onClick={onOpenModal} className="btn btn-primary" style={{ padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem)', fontSize: 'clamp(0.8125rem, 2vw, 0.9375rem)', position: 'relative' }}>
-                            GET YOUR FREE CONSULTATION
+                            GET YOUR FREE QUOTE
                         </button>
                     </div>
                 </FadeInSection>

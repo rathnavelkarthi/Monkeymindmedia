@@ -152,7 +152,7 @@ export default function CaseStudy() {
                     <FadeInSection>
                         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             <a href="/" className="btn btn-primary">← Back to Work</a>
-                            <a href="#contact" className="btn btn-outline">Start Similar Project</a>
+                            <a href="/" className="btn btn-outline">GET QUOTE</a>
                         </div>
                     </FadeInSection>
                 </div>

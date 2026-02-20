@@ -91,7 +91,7 @@ export default function Nav({ onOpenModal }) {
                         }}
                         className="hidden-mobile"
                     >
-                        INITIATE
+                        CONTACT
                     </motion.button>
 
                     {/* Burger */}
@@ -124,7 +124,7 @@ export default function Nav({ onOpenModal }) {
                             className="btn btn-primary"
                             style={{ marginTop: '1rem', width: '100%', justifyContent: 'center', padding: '1.25rem 3rem' }}
                         >
-                            INITIATE BRIEFING
+                            GET QUOTE
                         </button>
                     </div>
                 )}

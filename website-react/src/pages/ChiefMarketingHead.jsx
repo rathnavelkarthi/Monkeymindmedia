@@ -287,7 +287,7 @@ export default function ChiefMarketingHead({ onOpenModal }) {
                             className="btn btn-primary"
                             style={{ padding: '1.25rem 3rem' }}
                         >
-                            INITIATE BRIEFING
+                            GET QUOTE
                         </button>
                     </div>
                 </FadeInSection>
