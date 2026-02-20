@@ -116,7 +116,7 @@ try {
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'contact@monkeymindmedia.com';
-    $mail->Password   = 'Desmond@rathnavel1997'; 
+    $mail->Password   = 'YOUR_SMTP_PASSWORD_HERE'; // !!! SECURE: DO NOT PUSH ACTUAL PASSWORD TO GIT !!!
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
