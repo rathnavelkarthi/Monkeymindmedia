@@ -1,11 +1,19 @@
-<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// -------------------------------------------------------------------------
+// REQUISITE LIBRARY CHECK
+// -------------------------------------------------------------------------
+$lib_path = __DIR__ . '/PHPMailer/src/';
+if (!file_exists($lib_path . 'PHPMailer.php')) {
+    header("Content-Type: application/json");
+    echo json_encode([
+        "status" => "missing_library", 
+        "message" => "PHPMailer library files are missing in /public/PHPMailer/. Please upload them to your server."
+    ]);
+    exit;
+}
 
-// Paths for Hostinger environment (Update these if PHPMailer is installed via Composer)
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require $lib_path . 'Exception.php';
+require $lib_path . 'PHPMailer.php';
+require $lib_path . 'SMTP.php';
 
 /* -----------------------------
    SECURITY HEADERS
