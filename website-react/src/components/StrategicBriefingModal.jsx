@@ -89,34 +89,24 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
         })
 
         try {
-            const res = await fetch("/strategic-intake.php", {
+            const res = await fetch("https://formspree.io/f/xdallpwg", {
                 method: "POST",
+                headers: {
+                    'Accept': 'application/json'
+                },
                 body: submitData,
             })
 
-            // Diagnostic check: If server returns HTML instead of JSON (like a 404 or index redirect)
-            const contentType = res.headers.get("content-type")
-            if (!contentType || !contentType.includes("application/json")) {
-                throw new Error("SERVER_NOT_READY")
-            }
-
-            const data = await res.json()
-
-            if (data.status === "success" || data.status === "mail_partial_success") {
+            if (res.ok) {
                 setStatus('success')
             } else {
+                const data = await res.json()
                 setStatus('error')
-                setErrorMsg(data.message || 'Submission failed. Check your database/email configuration.')
+                setErrorMsg(data.errors ? data.errors.map(e => e.message).join(", ") : 'Submission failed. Please try again.')
             }
         } catch (err) {
             setStatus('error')
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                setErrorMsg('LOCAL TEST ERROR: Vite/Dev server cannot run PHP. This form will only work once uploaded to Hostinger.')
-            } else if (err.message === "SERVER_NOT_READY") {
-                setErrorMsg('SERVER ERROR: The intake script (strategic-intake.php) returned HTML instead of JSON. Ensure it is in your public_html folder.')
-            } else {
-                setErrorMsg('Network error: Could not reach the portal. Ensure strategic-intake.php is in public_html.')
-            }
+            setErrorMsg('Network error: Could not reach the intake server. Please check your connection.')
         }
     }
 
