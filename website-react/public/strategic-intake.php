@@ -56,12 +56,18 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 /* -----------------------------
-   DATABASE CONNECTION
+   DATABASE CONFIGURATION
 -------------------------------- */
 $host = "localhost";
-$dbname = "YOUR_DB_NAME"; // USER MUST CONFIGURE
-$db_user = "YOUR_DB_USER"; // USER MUST CONFIGURE
-$db_pass = "YOUR_DB_PASSWORD"; // USER MUST CONFIGURE
+$dbname = "YOUR_DB_NAME"; 
+$db_user = "YOUR_DB_USER"; 
+$db_pass = "YOUR_DB_PASSWORD"; 
+
+// Check for placeholders
+if ($dbname === "YOUR_DB_NAME" || $db_user === "YOUR_DB_USER") {
+    echo json_encode(["status" => "config_required", "message" => "Database configuration required in strategic-intake.php"]);
+    exit;
+}
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $db_user, $db_pass);
@@ -88,8 +94,7 @@ try {
     ]);
 
 } catch (PDOException $e) {
-    // Log error internally in production
-    echo json_encode(["status" => "db_error", "message" => "Storage failure"]);
+    echo json_encode(["status" => "db_error", "message" => "Storage failure: " . $e->getMessage()]);
     exit;
 }
 

@@ -76,9 +76,12 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
         objective: '', email: '', whatsapp: ''
     })
 
+    const [errorMsg, setErrorMsg] = useState('')
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         setStatus('submitting')
+        setErrorMsg('')
 
         const submitData = new FormData()
         Object.entries(formData).forEach(([key, value]) => {
@@ -96,9 +99,11 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                 setStatus('success')
             } else {
                 setStatus('error')
+                setErrorMsg(data.message || 'Submission failed. Please check server configuration.')
             }
         } catch (err) {
             setStatus('error')
+            setErrorMsg('Network error: Could not reach the intelligence portal.')
         }
     }
 
@@ -229,7 +234,9 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                             {status === 'submitting' ? 'SENDING...' : 'SUBMIT PROJECT INQUIRY'}
                                         </button>
                                         {status === 'error' && (
-                                            <div style={{ color: '#ef4444', fontSize: '0.8rem', textAlign: 'center', marginTop: '1rem', fontWeight: 600 }}>ERROR: SUBMISSION FAILED. PLEASE TRY AGAIN.</div>
+                                            <div style={{ color: '#ef4444', fontSize: '0.8rem', textAlign: 'center', marginTop: '1rem', fontWeight: 600, padding: '1rem', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '0.5rem', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
+                                                {errorMsg}
+                                            </div>
                                         )}
                                     </div>
                                 </form>
