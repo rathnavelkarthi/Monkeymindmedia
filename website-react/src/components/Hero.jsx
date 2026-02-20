@@ -93,19 +93,14 @@ export default function Hero() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-40 hidden lg:block"
+                    className="w-full h-full object-cover opacity-80"
                     poster="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=1920"
                 >
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-abstract-loop-of-blue-particles-73-large.mp4" type="video/mp4" />
+                    <source src="https://videos.pexels.com/video-files/3129957/3129957-sd_640_360_25fps.mp4" type="video/mp4" />
                 </video>
-                {/* Mobile Fallback Image */}
-                <div
-                    className="block lg:hidden w-full h-full bg-cover bg-center opacity-30"
-                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=1920')` }}
-                />
                 {/* Clinical Overlays */}
-                <div className="absolute inset-0 bg-black/70 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
             </div>
 
             <div className="container relative z-10">
@@ -155,11 +150,11 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ ...smooth, delay: 0.8 }}
                     style={{
-                        fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                        fontSize: 'clamp(0.875rem, 2vw, 1.25rem)',
                         color: 'var(--gray-500)',
                         lineHeight: 1.8,
                         maxWidth: '600px',
-                        marginBottom: '6rem',
+                        marginBottom: 'clamp(3rem, 5vw, 6rem)',
                         fontWeight: 400,
                         letterSpacing: '0.02em'
                     }}
@@ -173,7 +168,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ ...smooth, delay: 1 }}
-                    style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}
+                    style={{
+                        display: 'flex',
+                        gap: 'clamp(1rem, 2vw, 2rem)',
+                        flexWrap: 'wrap'
+                    }}
                 >
                     <a href="#work" className="btn btn-primary">
                         INITIATE STRATEGY

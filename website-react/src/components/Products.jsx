@@ -59,19 +59,13 @@ export default function Products() {
                     </p>
                 </FadeInText>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-                    gap: '3rem',
-                }}>
+                <div className="bento-grid">
                     {products.map((p, i) => (
                         <FadeInSection
                             key={p.title}
                             delay={i * 0.1}
-                            style={{
-                                gridColumn: p.isLarge ? 'span 2' : 'span 1',
-                                display: 'flex'
-                            }}
+                            className={p.isLarge ? 'bento-span-2' : ''}
+                            style={{ display: 'flex' }}
                         >
                             <motion.div
                                 whileHover={{
@@ -81,7 +75,7 @@ export default function Products() {
                                 }}
                                 transition={{ type: 'spring', stiffness: 200, damping: 25 }}
                                 style={{
-                                    padding: '4rem',
+                                    padding: 'clamp(2rem, 5vw, 4rem)',
                                     background: 'var(--card)',
                                     border: '1px solid var(--border)',
                                     borderRadius: 'var(--radius-card)',

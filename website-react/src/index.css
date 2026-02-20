@@ -22,7 +22,16 @@
   --border-active: rgba(255, 255, 255, 0.08);
 
   --section-pad: 15rem;
+
   /* Massive enterprise whitespace */
+  @media (max-width: 1024px) {
+    --section-pad: 8rem;
+  }
+
+  @media (max-width: 768px) {
+    --section-pad: 5rem;
+  }
+
   --radius-card: 1.5rem;
 
   /* Vanguard Motion */
@@ -55,11 +64,11 @@ body {
 .text-h1 {
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: clamp(4rem, 12vw, 9rem);
+  font-size: clamp(3rem, 15vw, 9rem);
   /* Massive editorial scale */
-  line-height: 0.82;
-  /* Aggressively tight */
-  letter-spacing: -0.06em;
+  line-height: 0.9;
+  /* Aggressively tight but readable on mobile */
+  letter-spacing: -0.05em;
   /* Clinical squeeze */
   text-transform: uppercase;
 }
@@ -67,9 +76,9 @@ body {
 .text-h2 {
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
 }
 
 .section-label {
@@ -178,6 +187,7 @@ body {
 .gradient-text {
   background: linear-gradient(to right, #fff, var(--blue-lt));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -210,7 +220,10 @@ body {
   border: 1px solid var(--white);
 }
 
-.btn-primary:hover {}
+.btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
 
 .btn-outline {
   background: transparent;
@@ -225,6 +238,22 @@ body {
 }
 
 /* ── Cards ───────────────────────────────────── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+  gap: 2rem;
+}
+
+.bento-span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .bento-span-2 {
+    grid-column: span 1;
+  }
+}
+
 .card {
   background: var(--card);
   border-radius: var(--radius-card);

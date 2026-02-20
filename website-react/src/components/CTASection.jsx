@@ -44,9 +44,9 @@ export default function CTASection() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-30 hidden lg:block"
+                    className="w-full h-full object-cover opacity-50"
                 >
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-motion-of-abstract-blue-lines-and-particles-20412-large.mp4" type="video/mp4" />
+                    <source src="https://videos.pexels.com/video-files/3129910/3129910-sd_640_360_25fps.mp4" type="video/mp4" />
                 </video>
                 {/* Fallback & Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#050a14] via-[#0d1a3a]/80 to-[#050a14]" />

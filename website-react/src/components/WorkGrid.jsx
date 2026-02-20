@@ -213,11 +213,11 @@ export default function WorkGrid() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-15 hidden lg:block"
+                    className="w-full h-full object-cover opacity-35"
                 >
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-dots-and-lines-loop-21151-large.mp4" type="video/mp4" />
+                    <source src="https://videos.pexels.com/video-files/3129671/3129671-sd_640_360_25fps.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/60" />
             </div>
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -263,8 +263,8 @@ export default function WorkGrid() {
                         transition={{ duration: 0.8, ease: [0.8, 0, 0.1, 1] }}
                         style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-                            gap: '3rem',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 400px), 1fr))',
+                            gap: '2rem',
                         }}
                     >
                         {current.projects.map((p, i) => (
