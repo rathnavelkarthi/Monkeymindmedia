@@ -12,6 +12,7 @@ import {
   AISaaSDeployment,
   PerformanceMarketing
 } from './pages/SEOPages'
+import ChennaiMarketing from './pages/ChennaiMarketing'
 
 function UseCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
@@ -63,6 +64,7 @@ function Router({ onOpenModal }) {
   if (path === '/whatsapp-ai-automation') return <WhatsAppAutomation />
   if (path === '/ai-saas-development') return <AISaaSDeployment />
   if (path === '/performance-marketing-systems') return <PerformanceMarketing />
+  if (path === '/best-marketing-agency-chennai') return <ChennaiMarketing onOpenModal={onOpenModal} />
   if (path === '/chief-marketing-head' || path === '/vetrivel') return <ChiefMarketingHead onOpenModal={onOpenModal} />
   if (path === '/founder' || path === '/rathnavel') return <Founder onOpenModal={onOpenModal} />
 
