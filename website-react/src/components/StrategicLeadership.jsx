@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { FadeInSection } from './FadeInSection'
-import founderPortrait from '../assets/founder_portrait.png'
-import vetrivelPortrait from '../assets/vetri.png'
+import founderPortrait from '../assets/founder_portrait.webp'
+import vetrivelPortrait from '../assets/vetri.webp'
 
 function LeadershipCard({ name, title, description, image, link, linkText }) {
     return (

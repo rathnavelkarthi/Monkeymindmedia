@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 import { FadeInSection, FadeInText } from '../components/FadeInSection'
-import founderPortrait from '../assets/founder_portrait.png'
+import founderPortrait from '../assets/founder_portrait.webp'
 
 const smooth = { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
 
@@ -124,11 +124,15 @@ export default function Founder({ onOpenModal }) {
                     <img
                         src={founderPortrait}
                         alt="Rathnavel - Founder & Systems Architect"
+                        width="800"
+                        height="800"
+                        loading="eager"
+                        fetchPriority="high"
                         style={{
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
-                            objectPosition: 'top', // Added to prevent head cut-off
+                            objectPosition: 'top',
                             filter: 'grayscale(100%) contrast(110%)',
                             opacity: 0.8
                         }}
@@ -247,7 +251,7 @@ export default function Founder({ onOpenModal }) {
                 <FadeInSection>
                     <div style={{ padding: 'var(--section-pad) 0' }}>
                         <SectionLabel>METHODOLOGY</SectionLabel>
-                        <h2 className="text-h2" style={{ marginBottom: '6rem' }}>Strategic Operating Model</h2>
+                        <h2 className="text-h2" style={{ marginBottom: 'clamp(3rem, 6vw, 6rem)' }}>Strategic Operating Model</h2>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
                             {[
                                 'Intelligence Mapping',
@@ -272,7 +276,7 @@ export default function Founder({ onOpenModal }) {
                 <FadeInSection>
                     <div style={{
                         margin: 'var(--section-pad) 0',
-                        padding: 'clamp(5rem, 10vw, 10rem) 5vw',
+                        padding: 'clamp(3rem, 10vw, 10rem) clamp(1.5rem, 5vw, 5vw)',
                         background: 'var(--surface)',
                         border: '1px solid var(--border)',
                         textAlign: 'center',

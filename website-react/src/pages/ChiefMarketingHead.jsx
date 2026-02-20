@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 import { FadeInSection, FadeInText } from '../components/FadeInSection'
-import vetrivelPortrait from '../assets/vetri.png'
+import vetrivelPortrait from '../assets/vetri.webp'
 
 const smooth = { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
 

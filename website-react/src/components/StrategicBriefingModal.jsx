@@ -21,8 +21,8 @@ const CustomSelect = ({ label, options, value, onChange }) => {
                 style={{
                     cursor: 'pointer',
                     width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)',
-                    padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem',
-                    fontSize: '0.9rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem',
+                    fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                     transition: 'border-color 0.3s ease'
                 }}
             >
@@ -113,7 +113,7 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
     return (
         <AnimatePresence>
             {isOpen && (
-                <div style={{ position: 'fixed', inset: 0, zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+                <div style={{ position: 'fixed', inset: 0, zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'clamp(0.75rem, 3vw, 2rem)' }}>
                     {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -124,10 +124,10 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                     {/* Modal Content */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        style={{ position: 'relative', width: '100%', maxWidth: '750px', maxHeight: '90vh', background: '#0a0a0a', border: '1px solid var(--border)', borderRadius: '2rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+                        style={{ position: 'relative', width: '100%', maxWidth: '750px', maxHeight: '90vh', background: '#0a0a0a', border: '1px solid var(--border)', borderRadius: 'clamp(1rem, 4vw, 2rem)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
                     >
                         {/* Header */}
-                        <div style={{ padding: '2.5rem 3rem', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ padding: 'clamp(1.25rem, 4vw, 2.5rem) clamp(1.25rem, 5vw, 3rem)', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
                             <div>
                                 <div style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--blue)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Project Inquiry</div>
                                 <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--white)', letterSpacing: '0.05em' }}>START A PROJECT WITH US</h2>
@@ -137,7 +137,7 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                             </button>
                         </div>
 
-                        <div style={{ padding: '3rem', overflowY: 'auto', flex: 1 }}>
+                        <div style={{ padding: 'clamp(1.25rem, 5vw, 3rem)', overflowY: 'auto', flex: 1 }}>
                             {status === 'success' ? (
                                 <div style={{ textAlign: 'center', padding: '4rem 0' }}>
                                     <div style={{ width: '80px', height: '80px', background: 'rgba(37,99,235,0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
@@ -148,13 +148,13 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                     <button onClick={onClose} className="btn btn-primary" style={{ marginTop: '2.5rem' }}>CLOSE</button>
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                                    <div style={{ gridColumn: 'span 2' }}>
+                                <form onSubmit={handleSubmit} className="briefing-form" style={{ display: 'grid', gap: 'clamp(1.25rem, 4vw, 2rem)' }}>
+                                    <div style={{ gridColumn: '1 / -1' }}>
                                         <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Full Name *</label>
                                         <input
                                             type="text" required placeholder="Your Name"
                                             value={formData.full_name} onChange={e => setFormData({ ...formData, full_name: e.target.value })}
-                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
+                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem', fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)' }}
                                         />
                                     </div>
 
@@ -163,7 +163,7 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                         <input
                                             type="text" placeholder="Company Name"
                                             value={formData.organization} onChange={e => setFormData({ ...formData, organization: e.target.value })}
-                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
+                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem', fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)' }}
                                         />
                                     </div>
 
@@ -172,7 +172,7 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                         <input
                                             type="text" placeholder="Your Title"
                                             value={formData.role_title} onChange={e => setFormData({ ...formData, role_title: e.target.value })}
-                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
+                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem', fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)' }}
                                         />
                                     </div>
 
@@ -200,12 +200,12 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                         ]}
                                     />
 
-                                    <div style={{ gridColumn: 'span 2' }}>
+                                    <div style={{ gridColumn: '1 / -1' }}>
                                         <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-500)', letterSpacing: '0.2em', marginBottom: '0.8rem', textTransform: 'uppercase' }}>Project Goals *</label>
                                         <textarea
                                             required rows="4" placeholder="Briefly describe your goals"
                                             value={formData.objective} onChange={e => setFormData({ ...formData, objective: e.target.value })}
-                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem', resize: 'none' }}
+                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem', fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)', resize: 'none' }}
                                         />
                                     </div>
 
@@ -214,7 +214,7 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                         <input
                                             type="email" required placeholder="you@company.com"
                                             value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })}
-                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
+                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem', fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)' }}
                                         />
                                     </div>
 
@@ -223,11 +223,11 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                                         <input
                                             type="text" placeholder="+91 XXXX XXX XXX"
                                             value={formData.whatsapp} onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
-                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: '1rem 1.5rem', color: 'var(--white)', borderRadius: '0.75rem', fontSize: '0.9rem' }}
+                                            style={{ width: '100%', background: 'rgb(15,15,15)', border: '1px solid var(--border)', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)', color: 'var(--white)', borderRadius: '0.75rem', fontSize: 'clamp(0.8125rem, 2vw, 0.9rem)' }}
                                         />
                                     </div>
 
-                                    <div style={{ gridColumn: 'span 2', marginTop: '1rem' }}>
+                                    <div style={{ gridColumn: '1 / -1', marginTop: '1rem' }}>
                                         <button
                                             disabled={status === 'submitting'}
                                             type="submit"
@@ -246,6 +246,20 @@ export default function StrategicBriefingModal({ isOpen, onClose }) {
                             )}
                         </div>
                     </motion.div>
+
+                    <style>{`
+                        .briefing-form {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        @media (max-width: 600px) {
+                            .briefing-form {
+                                grid-template-columns: 1fr;
+                            }
+                            .briefing-form > div[style*="1 / -1"] {
+                                grid-column: 1 / -1;
+                            }
+                        }
+                    `}</style>
                 </div>
             )}
         </AnimatePresence>
